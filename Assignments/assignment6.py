@@ -103,50 +103,6 @@ class LinkedList:
         self.tail = None
         self.size = 0
 
-def insert(list, index, value):
-    if (index > list.size()) or index<0:
-        print("Invalid INdex")
-    else:
-        if index == 0:
-            newN = Node(value,list._first,None)
-            list._prev = newN
-            list._first = newN
-        else:
-            count = 0
-            prev = list._first
-            cur = list._first
-            while count<index and cur:
-                prev = cur
-                cur = cur._next
-                count+=1
-            print(prev._value)
-            if index == list.size():
-                newN = Node(value,None,prev)
-                prev._next = newN
-            else:
-                newN = Node(value,cur,prev)
-                cur._previous = newN
-                prev._next = newN
-
-def remove(list, index):
-    if (index > list.size()) or index<0:
-        print("Invalid INdex")
-    else:
-        if index == 0:
-            list._head = list._head._next
-        else:
-            count = 0
-            prev = list._first
-            cur = list._first
-            while count<index and cur:
-                prev = cur
-                cur = cur._next
-                count+=1
-            print(prev._value)
-            if index == list.size():
-                 print()
-            else:
-                print()
 SLL=LinkedList()
 for i in range(10):
     SLL.append(i+1)
